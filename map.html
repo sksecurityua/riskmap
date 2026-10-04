@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карта ризиків SK Security</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="app.css">
+<script src="config.js"></script>
+</head>
+<body>
+<div id="login" class="overlay" hidden>
+  <div class="card">
+    <h1>Карта ризиків</h1>
+    <div class="sub">SK Security · вхід до кабінету</div>
+    <input type="email" id="loginEmail" placeholder="Логін (робоча пошта)" autocomplete="username">
+    <input type="password" id="loginPass" placeholder="Пароль" autocomplete="current-password">
+    <button id="loginBtn">Увійти</button>
+    <div class="row"><button class="link" id="magicBtn">Вхід за посиланням на пошту</button><button class="link" id="forgotBtn">Забули пароль?</button></div>
+    <div id="loginMsg" class="hint"></div>
+    <div id="demoAccounts" hidden>
+      <h2>Демо-доступи</h2>
+      <table class="acc"><thead><tr><th>Логін</th><th>Пароль</th><th>Роль</th></tr></thead><tbody id="demoAccBody"></tbody></table>
+      <div class="hint">Натисніть рядок, щоб підставити. Це вигадані облікові записи демо-режиму.</div>
+    </div>
+    <div class="hint" style="margin-top:8px">Доступ надає аналітик SK Security. Кожен клієнт бачить лише свої об'єкти.</div>
+  </div>
+</div>
+
+<div id="app">
+  <aside id="side">
+    <div class="head">
+      <div>
+        <h1>Карта ризиків</h1>
+        <div class="sub" id="who">SK Security</div>
+      </div>
+      <div><a class="small-link" id="accessLink" href="admin.html" hidden>Доступи</a> <button class="sec small" id="logoutBtn" hidden>Вийти</button></div>
+    </div>
+    <div id="demoNote" class="demo" hidden><b>Демо-режим.</b> Клієнти й об'єкти вигадані; зміни зберігаються лише у вашому браузері. Робочий режим — з входом за email і розмежуванням доступу в базі.</div>
+    <div id="orgBox" hidden>
+      <h2>Клієнт</h2>
+      <select id="orgSel"></select>
+    </div>
+
+    <div class="tabs">
+      <div class="tab on" data-p="over">Огляд</div>
+      <div class="tab" data-p="objs">Об'єкти</div>
+      <div class="tab" data-p="route">Маршрут</div>
+      <div class="tab" data-p="inc">Інциденти</div>
+    </div>
+
+    <!-- ОГЛЯД -->
+    <section class="pane on" id="p-over">
+      <div class="kpis">
+        <div class="kpi"><b id="kAlert">–</b><span>областей з тривогою</span></div>
+        <div class="kpi"><b id="kInc">–</b><span>інцидентів за період</span></div>
+        <div class="kpi"><b id="kObj">–</b><span>об'єктів</span></div>
+      </div>
+      <h2>Період</h2>
+      <select id="days">
+        <option value="30">30 днів</option><option value="90">90 днів</option><option value="180" selected>180 днів</option><option value="365">рік</option>
+      </select>
+      <h2>Заливка областей</h2>
+      <select id="mode">
+        <option value="alert">Повітряна тривога зараз</option>
+        <option value="inc">Інциденти за період</option>
+        <option value="crime">Криміногенність (злочинів на 10 тис.)</option>
+        <option value="hist">Архів ударів 11.2022–09.2025</option>
+      </select>
+      <h2>Шари</h2>
+      <label><input type="checkbox" class="cat" value="military" checked> Воєнні (удари, уламки, мінна небезпека)</label>
+      <label><input type="checkbox" class="cat" value="crime" checked> Кримінальні</label>
+      <label><input type="checkbox" class="cat" value="registry" checked> Рейдерство / тиск на бізнес</label>
+      <label><input type="checkbox" class="cat" value="technogenic" checked> Техногенні</label>
+      <label><input type="checkbox" class="cat" value="civil" checked> Інше</label>
+      <label><input type="checkbox" id="lObj" checked> Об'єкти клієнта</label>
+      <label><input type="checkbox" id="lOcc"> Окуповані території / лінія фронту</label>
+      <h2>Область</h2>
+      <div id="regionPanel" class="panel hint">Натисніть на область на карті.</div>
+    </section>
+
+    <!-- ОБ'ЄКТИ -->
+    <section class="pane" id="p-objs">
+      <div id="objList" class="panel"></div>
+      <h2 id="objFormTitle">Додати об'єкт</h2>
+      <input type="hidden" id="oId">
+      <input type="text" id="oName" placeholder="Назва (напр., Склад №2)">
+      <div class="row">
+        <select id="oKind">
+          <option value="office">Офіс</option><option value="warehouse">Склад</option><option value="store">Магазин</option>
+          <option value="production">Виробництво</option><option value="terminal">Термінал</option><option value="residence">Житло персоналу</option><option value="other">Інше</option>
+        </select>
+        <select id="oCrit" title="Критичність"><option value="1">Критичність: низька</option><option value="2" selected>Критичність: середня</option><option value="3">Критичність: висока</option></select>
+      </div>
+      <div class="row">
+        <input type="number" id="oRad" value="25" min="1" max="150" title="Радіус моніторингу, км">
+        <input type="text" id="oContact" placeholder="Відповідальна особа (необов'язково)">
+      </div>
+      <input type="text" id="oAddr" placeholder="Адреса або населений пункт">
+      <div class="sugg" id="oSugg"></div>
+      <div class="row"><button class="sec" id="oPick">Вказати на карті</button><button class="sec" id="oCancel" hidden>Скасувати</button></div>
+      <div class="hint" id="oLL">Координати не задано.</div>
+      <div class="row"><button id="oSave">Зберегти об'єкт</button></div>
+      <div class="hint">Радіус (км) — зона, у якій система враховує події і надсилатиме сповіщення.</div>
+      <h2>Оцінка ризику</h2>
+      <div id="riskPanel" class="panel hint">Оберіть об'єкт у списку.</div>
+    </section>
+
+    <!-- МАРШРУТ -->
+    <section class="pane" id="p-route">
+      <div class="hint">Відрядження автомобілем: маршрут і ризики вздовж нього.</div>
+      <h2>Звідки</h2>
+      <input type="text" id="rFrom" value="Київ"><div class="sugg" id="rFromS"></div>
+      <h2>Куди</h2>
+      <input type="text" id="rTo" value="Дніпро"><div class="sugg" id="rToS"></div>
+      <div class="row">
+        <input type="date" id="rDate">
+        <select id="rBuf"><option value="5">коридор 5 км</option><option value="10" selected>коридор 10 км</option><option value="25">коридор 25 км</option></select>
+      </div>
+      <input type="text" id="rPurpose" placeholder="Мета поїздки (необов'язково)">
+      <input type="text" id="rWho" placeholder="Хто їде / кількість осіб (необов'язково)">
+      <label><input type="checkbox" id="rBack" checked> Враховувати зворотний шлях того ж дня</label>
+      <div class="row"><button id="rGo">Побудувати й оцінити</button></div>
+      <div id="routePanel" class="panel" hidden></div>
+      <div class="row" id="tripBtns" hidden><button class="sec" id="tripReport">Сформувати довідку для відрядження</button></div>
+      <h2>Рекомендації SK Security</h2>
+      <div class="row"><button class="sec" id="dutyReport">Рекомендації для відряджень (усі регіони)</button></div>
+      <div class="hint">Поточна редакція рівнів ризику по областях від аналітиків SK і карта ризиків відносно ваших об'єктів за 2 тижні.</div>
+    </section>
+
+    <!-- ІНЦИДЕНТИ -->
+    <section class="pane" id="p-inc">
+      <div class="hint">Підтверджені інциденти в межах карти за обраний період, найновіші зверху.</div>
+      <div id="incList" class="panel"></div>
+      <div id="incForm" hidden>
+        <h2>Додати інцидент (аналітик)</h2>
+        <select id="iType"></select>
+        <div class="row"><input type="date" id="iDate"><select id="iSev"><option value="1">Рівень 1</option><option value="2" selected>Рівень 2</option><option value="3">Рівень 3</option></select></div>
+        <input type="text" id="iTitle" placeholder="Заголовок">
+        <input type="text" id="iUrl" placeholder="Посилання на джерело">
+        <input type="text" id="iAddr" placeholder="Місце: адреса / населений пункт"><div class="sugg" id="iSugg"></div>
+        <div class="row"><button class="sec" id="iPick">Вказати на карті</button></div>
+        <div class="hint" id="iLL">Місце не задано.</div>
+        <label><input type="checkbox" id="iVerified" checked> Підтверджено аналітиком (видно клієнтам)</label>
+        <div class="row"><button id="iSave">Зберегти інцидент</button></div>
+      </div>
+    </section>
+
+    <div class="src">
+      <b>Джерела:</b> тривоги — ubilling.net.ua (Vadym Klymenko API); події війни — VIINA (Zhukov, University of Michigan), ODbL; удари по бізнесу — реєстр SK Security за відкритими медіаджерелами;
+      архів ударів і окуповані території — БД SecurityMap (до 09–10.2025); маршрути — OSRM, геокодування — Nominatim (OpenStreetMap); межі областей — geoBoundaries (CC BY 4.0).
+    </div>
+  </aside>
+  <div id="map"></div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html lang="uk"><head><meta name="robots" content="noindex"><meta charset="utf-8"/>
+<title>Огляд ситуації з безпекою · 21–27 вересня 2026</title>
+<style>
+:root{--deep:#051C2C;--blue:#2251FF;--cyan:#00A9F4;--teal:#00747A;--red:#D0021B;
+ --amber:#E8A33D;--green:#137F4B;--gray1:#333;--gray2:#6B6B6B;--gray3:#A9A9A9;
+ --rule:#D4D4D4;--bg:#F4F4F4}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--gray1);
+ font-size:8.7pt;line-height:1.40;counter-reset:pg}
+@page{size:A4;margin:0}
+.page{width:210mm;height:297mm;padding:15mm 16mm 19mm;position:relative;
+ page-break-after:always;overflow:hidden;background:#fff;counter-increment:pg}
+.page:last-child{page-break-after:auto}
+.hdr{position:absolute;top:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;
+ font-size:7pt;color:var(--gray3);letter-spacing:.08em;text-transform:uppercase;
+ border-bottom:.5pt solid var(--rule);padding-bottom:2mm}
+.ftr{position:absolute;bottom:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;
+ font-size:7pt;color:var(--gray3);border-top:.5pt solid var(--rule);padding-top:2mm}
+.pg{font-weight:600;color:var(--gray2)}
+.pg::after{content:counter(pg)}
+h1{font-size:30pt;font-weight:300;line-height:1.12;letter-spacing:-.02em;color:var(--deep)}
+h2{font-size:15pt;font-weight:300;color:var(--deep);line-height:1.18;margin-bottom:2.4mm;
+ letter-spacing:-.01em}
+h3{font-size:10pt;font-weight:700;color:var(--deep);margin:3.4mm 0 1.2mm}
+h4{font-size:8.7pt;font-weight:700;margin:2.4mm 0 .8mm}
+.kicker{font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--blue);margin-bottom:2mm}
+.kicker.alert{color:var(--red)}
+.kicker.alert:before{content:'';display:inline-block;width:2.4mm;height:2.4mm;
+ background:var(--red);margin-right:1.6mm;vertical-align:-.2mm}
+.kpis.alert{border-top-color:var(--red);border-bottom-color:var(--red)}
+.kpis.alert .kpi .n{color:var(--red);font-weight:400}
+.deck{font-size:9.8pt;font-weight:300;color:var(--gray2);line-height:1.36;margin-bottom:3mm}
+p{margin-bottom:1.6mm}
+strong{font-weight:700;color:var(--deep)}
+em{font-style:italic;color:var(--gray2)}
+ul,ol{margin:0 0 2.5mm;padding-left:4.5mm}
+li{margin-bottom:.95mm;line-height:1.36}
+ul.tight li{margin-bottom:.7mm}
+ul.clean{list-style:none;padding-left:0}
+ul.clean li{padding-left:4mm;position:relative}
+ul.clean li:before{content:"";position:absolute;left:0;top:1.5mm;width:1.6mm;height:1.6mm;
+ background:var(--blue)}
+.cover{background:var(--deep);color:#fff;padding:0}
+.cover-inner{padding:26mm 20mm 20mm}
+.cover h1{color:#fff;font-size:38pt;margin-bottom:6mm}
+.cover .rule{width:38mm;height:1.2mm;background:var(--cyan);margin:7mm 0}
+.cover .period{font-size:13.5pt;font-weight:300;color:var(--cyan)}
+.cover .meta{position:absolute;bottom:20mm;left:20mm;right:20mm;font-size:8pt;
+ color:rgba(255,255,255,.65);line-height:1.7;border-top:.5pt solid rgba(255,255,255,.25);
+ padding-top:4mm}
+.cover .conf{position:absolute;top:16mm;left:20mm;font-size:7.5pt;letter-spacing:.16em;
+ text-transform:uppercase;color:var(--cyan);font-weight:700}
+.cover-stats{display:flex;margin-top:12mm;border-top:.5pt solid rgba(255,255,255,.25);
+ flex-wrap:wrap}
+.cover-stat{width:33.33%;padding:5mm 4mm 4mm 0}
+.cover-stat .n{font-size:20pt;font-weight:300;color:#fff;line-height:1}
+.cover-stat .n .u{font-size:10pt}
+.cover-stat .l{font-size:7pt;color:rgba(255,255,255,.7);margin-top:1.5mm;line-height:1.35}
+.takeaway{background:var(--bg);border-left:2mm solid var(--blue);padding:3.2mm 4.2mm;margin:2.4mm 0 3mm}
+.takeaway .t{font-size:7.5pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+ color:var(--blue);margin-bottom:2mm}
+.takeaway ol{padding-left:4mm;margin:0}
+.takeaway li{font-size:8.5pt;margin-bottom:0.65mm}
+.callout{border-left:1.5mm solid var(--red);background:#FDF3F4;padding:2.4mm 3.4mm;margin:2.4mm 0}
+.callout.amber{border-color:var(--amber);background:#FDF8F0}
+.callout.blue{border-color:var(--blue);background:#EEF2FF}
+.callout .t{font-weight:700;color:var(--deep);font-size:9pt;margin-bottom:1mm}
+.impact{background:#EEF2FF;border-left:1.5mm solid var(--deep);padding:2.4mm 3.4mm;margin:2mm 0}
+.impact .t{font-size:7.2pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--deep);margin-bottom:1mm}
+.impact p{margin:0;font-size:8.6pt}
+.exhibit{margin:2.5mm 0 2.9mm;page-break-inside:avoid}
+.exhibit .xnum{font-size:7.2pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--blue);margin-bottom:1mm}
+.exhibit .xtitle{font-size:10.5pt;font-weight:700;color:var(--deep);line-height:1.25;margin-bottom:1mm}
+.exhibit .xsub{font-size:8pt;color:var(--gray2);margin-bottom:3mm;font-weight:300}
+.exhibit .xsrc{font-size:6.9pt;color:var(--gray3);margin-top:2mm;line-height:1.4;
+ border-top:.5pt solid var(--rule);padding-top:1.5mm}
+table{width:100%;border-collapse:collapse;font-size:8pt}
+th{text-align:left;font-weight:700;color:var(--deep);font-size:7.2pt;letter-spacing:.06em;
+ text-transform:uppercase;padding:2mm 2mm 1.5mm 0;border-bottom:1pt solid var(--deep);
+ vertical-align:bottom}
+td{padding:0.98mm 2mm 0.98mm 0;border-bottom:.5pt solid var(--rule);vertical-align:top}
+tr.total td{font-weight:700;border-bottom:1pt solid var(--deep);border-top:.5pt solid var(--deep)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;padding-right:3mm}
+td.c,th.c{text-align:center}
+table.zebra tbody tr:nth-child(even){background:#FAFAFA}
+table.compact td{padding:.62mm 2mm .62mm 0;font-size:7.45pt}
+table.compact th{font-size:6.9pt;padding:1.4mm 2mm 1mm 0}
+.bars{width:100%}
+.bars td{border:none;padding:.85mm 0;vertical-align:middle}
+.bars .lbl{font-size:7.8pt;width:44mm;padding-right:2mm;white-space:nowrap}
+.bars .track{width:100%}
+.bars .bar{height:3.2mm;background:var(--blue);display:block}
+.bars .bar.red{background:var(--red)}
+.bars .bar.amber{background:var(--amber)}
+.bars .bar.cyan{background:var(--cyan)}
+.bars .bar.gray{background:var(--gray3)}
+.bars .bar.deep{background:var(--deep)}
+.bars .bar.green{background:var(--green)}
+.bars .v{font-size:7.8pt;font-weight:700;color:var(--deep);width:23mm;text-align:right;
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+.dots{letter-spacing:.4mm;font-size:8.5pt}
+.dots .on{color:var(--red)}
+.dots .on.a{color:var(--amber)}
+.dots .on.g{color:var(--green)}
+.dots .off{color:#DDD}
+.d-up{color:var(--red);font-weight:700}
+.d-dn{color:var(--green);font-weight:700}
+.d-eq{color:var(--gray3);font-weight:700}
+.dir{font-weight:700;font-size:9pt}
+.dir.rf{color:var(--red)}
+.dir.ua{color:var(--green)}
+.dir.no{color:var(--gray3)}
+.kpis{display:flex;margin:3mm 0 4mm;border-top:1pt solid var(--deep);
+ border-bottom:.5pt solid var(--rule)}
+.kpi{flex:1;padding:3mm 2.5mm 3mm 0;border-right:.5pt solid var(--rule)}
+.kpi:last-child{border-right:none}
+.kpi .n{font-size:15.5pt;font-weight:300;color:var(--deep);line-height:1}
+.kpi .n .u{font-size:8pt;color:var(--gray2)}
+.kpi .l{font-size:6.6pt;color:var(--gray2);margin-top:1.5mm;line-height:1.3;
+ text-transform:uppercase;letter-spacing:.04em}
+.kpi .dd{font-size:7.2pt;font-weight:700;margin-top:.8mm}
+.toc-row{display:flex;justify-content:space-between;padding:1.02mm 0;
+ border-bottom:.5pt solid var(--rule);font-size:8.8pt}
+.toc-row.h{font-weight:700;color:var(--deep);border-bottom:1pt solid var(--deep);margin-top:2.5mm}
+.toc-row .n{color:var(--gray3);font-variant-numeric:tabular-nums}
+.toc-row .ind{padding-left:5mm}
+.legend{font-size:7.2pt;color:var(--gray2);line-height:1.48;background:var(--bg);
+ padding:2.8mm 3.4mm;margin:2.2mm 0}
+.legend b{color:var(--deep)}
+.mapbox{border:.5pt solid var(--rule);margin:2.5mm 0;background:#FAFAFA}
+.mapbox img{width:100%;display:block}
+.srcs{font-size:7pt;color:var(--gray2);line-height:1.5;column-count:2;column-gap:7mm}
+.srcs div{margin-bottom:1.1mm;break-inside:avoid}
+.m{font-size:6.8pt;font-weight:700;letter-spacing:.01em;white-space:nowrap;color:var(--gray2)}
+.m.p{color:var(--green)}
+.m.q{color:var(--amber)}
+.m.z{color:var(--blue)}
+.m.r{color:var(--teal)}
+.m.o{color:var(--gray3)}
+th.d,td.d{text-align:center;width:11mm}
+.mleg{display:flex;flex-wrap:wrap;margin:1.2mm 0 0}
+.mleg div{width:50%;padding:.3mm 3mm .3mm 0}
+
+</style></head><body><div style="position:sticky;top:0;z-index:99;background:#13294b;color:#fff;font:600 14px Manrope,Arial,sans-serif;padding:10px 16px;text-align:center">
+Зразок щотижневого «Огляду ситуації з безпекою» SK Security (фрагмент випуску №39/2026). Розділи щодо об'єктів і контрагентів замовника вилучено.
+<a href="../index.html#digests" style="color:#ffb703;margin-left:10px">Замовити дайджест →</a></div>
+<!-- 1 · COVER -->
+<div class="page cover">
+<div class="conf">Зразок · фрагмент випуску для ознайомлення</div>
+<div class="cover-inner">
+<div style="font-size:8pt;letter-spacing:.14em;text-transform:uppercase;
+ color:rgba(255,255,255,.6);margin-bottom:6mm">Щотижневий аналітичний огляд · випуск №39/2026</div>
+<h1>Огляд ситуації<br/>з безпекою</h1>
+<div class="rule"></div>
+<div class="period">за період з 21 по 27 вересня 2026 року</div>
+<div class="cover-stats">
+<div class="cover-stat"><div class="n">69</div>
+<div class="l">уражених бізнес-об'єктів<br/>за тиждень</div></div>
+<div class="cover-stat"><div class="n">40</div>
+<div class="l">з них у Києві<br/>та області</div></div>
+<div class="cover-stat"><div class="n">14</div>
+<div class="l">уражених складів<br/>і розподільчих центрів</div></div>
+<div class="cover-stat"><div class="n">7</div>
+<div class="l">загиблих у Києві<br/>за добу 25.09</div></div>
+<div class="cover-stat"><div class="n">17<span class="u"> тис.</span></div>
+<div class="l">працівників ArcelorMittal<br/>Кривий Ріг — роботу зупинено</div></div>
+<div class="cover-stat"><div class="n">98,42<span class="u"> грн</span></div>
+<div class="l">дизель — середньозважена<br/>ціна на 25.09</div></div>
+</div>
+</div>
+<div class="meta">
+<b style="color:#fff">Підготовлено:</b> аналітична група<br/>
+<b style="color:#fff">Період моніторингу:</b> 21.09.2026 00:00 – 27.09.2026 23:59<br/>
+<b style="color:#fff">Дата випуску:</b> 28 вересня 2026 року
+ </div>
+</div>
+<!-- 2 · ЗМІСТ -->
+
+<!-- 3 · КЛЮЧОВІ ВИСНОВКИ -->
+
+<!-- 4 · ОБ'ЄКТИ ЛАНЦЮГА ПОСТАЧАННЯ -->
+
+<!-- 5 · СТРУКТУРА ТИЖНЯ -->
+<div class="page">
+<div class="hdr"><span>Об'єкти ланцюга постачання</span><span>21–27 вересня 2026</span></div>
+<h2>Кампанія проти комерційної логістики:<br/>структура тижня</h2>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 2</div>
+<div class="xtitle">Уражені бізнес-об'єкти за категоріями</div>
+<div class="xsub">69 об'єктів за 21–27 вересня 2026 року</div>
+<table class="bars">
+<tr><td class="lbl">Завод / виробництво</td>
+<td class="track"><span class="bar red" style="width:97%"></span></td><td class="v">19</td></tr>
+<tr><td class="lbl">Склад / РЦ</td>
+<td class="track"><span class="bar red" style="width:72%"></span></td><td class="v">14</td></tr>
+<tr><td class="lbl">ТРЦ / магазин / ринок</td>
+<td class="track"><span class="bar amber" style="width:41%"></span></td><td class="v">8</td></tr>
+<tr><td class="lbl">Офіс / бізнес-центр</td>
+<td class="track"><span class="bar amber" style="width:46%"></span></td><td class="v">6</td></tr>
+<tr><td class="lbl">Телеком / дата-центр</td>
+<td class="track"><span class="bar" style="width:46%"></span></td><td class="v">6</td></tr>
+<tr><td class="lbl">Енергетика / мережі</td>
+<td class="track"><span class="bar" style="width:31%"></span></td><td class="v">4</td></tr>
+<tr><td class="lbl">АЗС / резервуари пального</td>
+<td class="track"><span class="bar gray" style="width:23%"></span></td><td class="v">3</td></tr>
+<tr><td class="lbl">Транспорт / логістика</td>
+<td class="track"><span class="bar gray" style="width:31%"></span></td><td class="v">6</td></tr>
+<tr><td class="lbl">Порт, елеватор</td>
+<td class="track"><span class="bar cyan" style="width:17%"></span></td><td class="v">3</td></tr>
+</table>
+<div class="xsrc">Категорії — за реєстром ударів по бізнес-об'єктах SK Security.
+ Перелік охоплює випадки, публічно підтверджені компаніями або органами влади
+ <span class="m r">[Р]</span>.</div>
+</div>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 3</div>
+<div class="xtitle">Найзначніші епізоди тижня</div>
+<div class="xsub">Підтверджені наслідки для виробництва або запасів</div>
+<table class="zebra compact">
+<thead><tr><th style="width:15mm">Дата</th><th style="width:40mm">Об'єкт</th>
+<th>Наслідки</th><th class="d">Дост.</th></tr></thead>
+<tbody>
+<tr><td><strong>21.09</strong></td><td><strong>ArcelorMittal Кривий Ріг</strong></td>
+<td>Четвертий удар за 5 тижнів; 5 загиблих, 17 травмованих. Комбінат зупинено</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr style="background:#FDF3F4"><td><strong>22.09</strong></td>
+<td><strong>«Інтерпайп»</strong><br/><span style="color:var(--gray3)">Дніпро, трубне
+ виробництво</span></td>
+<td><strong>4 співробітники загинули, 7 поранені.</strong> Пошкоджено
+ основне виробниче обладнання, виробництво зупинено</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>22 і 25.09</strong></td><td><strong>Кромберг енд Шуберт Житомир</strong><br/>
+<span style="color:var(--gray3)">автокомпоненти, ФРН</span></td>
+<td>Двічі за тиждень; підприємство вже зупиняло роботу після серпневого удару</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>23 і 26.09</strong></td><td><strong>Фармкомпанія «Дарниця»</strong><br/>
+<span style="color:var(--gray3)">Київ</span></td>
+<td>Двічі за тиждень; компанія просить інформаційної тиші</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>22.09</strong></td><td><strong>«Сніжна Панда»</strong><br/>
+<span style="color:var(--gray3)">паперова продукція</span></td>
+<td>Складський комплекс знищено <strong>вдруге за 3 місяці</strong>
+ (уперше — 1 липня)</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>23.09</strong></td><td><strong>Порт і склади Одещини</strong></td>
+<td>Уражено портову інфраструктуру та <strong>вантажне судно під прапором Антигуа
+ і Барбуди — загинув капітан</strong>; ударів зазнали склади з медикаментами,
+ побутовими товарами та продуктами</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr style="background:#FDF3F4"><td><strong>24.09</strong></td>
+<td><strong>«ТК-Домашній текстиль»</strong><br/>
+<span style="color:var(--gray3)">Київ, текстиль</span></td>
+<td>Балістикою зруйновано <strong>головне виробництво і логістичний склад</strong>;
+ <strong>щонайменше другий удар</strong> по майданчиках групи менш ніж за рік.
+ Потужності переносять у регіони</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>24.09</strong></td><td><strong>Депо «Нової пошти»</strong><br/>
+<span style="color:var(--gray3)">Київ</span></td>
+<td>Пошкоджено сортувальне депо, знищено відділення №6; того ж дня уражено
+ ювелірне виробництво Dukachi</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>25.09</strong></td>
+<td><strong>Склад мережі «Сушия»</strong><br/>
+<span style="color:var(--gray3)">Київ</span></td>
+<td><strong>Будівля і всі товарні запаси знищені</strong> пожежею</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>26.09</strong></td><td><strong>Eskaro</strong><br/>
+<span style="color:var(--gray3)">лакофарбове виробництво, Швеція</span></td>
+<td>Влучання в підприємство шведського виробника, масштабна пожежа</td>
+<td class="d"><span class="m q">[?]</span></td></tr>
+<tr><td><strong>27.09</strong></td><td><strong>Ринок «Столичний»</strong><br/>
+<span style="color:var(--gray3)">Софіївська Борщагівка</span></td>
+<td>Реактивний БпЛА влучив у продовольчий ринок із 6 павільйонів —
+ <strong>2 загиблих, близько 10 поранених</strong></td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>22 і 27.09</strong></td><td><strong>Склади й порт Одещини</strong><br/>
+<span style="color:var(--gray3)">зокрема «Нова пошта»</span></td>
+<td>Масштабні пожежі двічі за тиждень; 27.09 знищено <strong>склад «Нової пошти»</strong>
+ і сусідній цех, уражено <strong>порт Кілії</strong> та зерновий склад.
+ Разом 2 загиблих</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr class="total"><td><strong>27.09</strong></td>
+<td><strong>Склад Kärcher Ukraine</strong><br/>
+<span style="color:var(--gray3)">побутова та професійна техніка, ФРН</span></td>
+<td><strong>Повністю знищено разом з усією продукцією;</strong> замовлення затримані
+ або скасовані</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+</tbody></table>
+<div class="xsrc">Джерело: заяви компаній, ОВА, ДСНС</div>
+</div>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+
+<!-- 6 · ТЕЛЕКОМ -->
+<div class="page">
+<div class="hdr"><span>Об'єкти ланцюга постачання</span><span>21–27 вересня 2026</span></div>
+<h2>Нова мішень — телеком<br/>і дата-центри</h2>
+<div class="deck">Протягом тижня противник системно вражав вузли зв'язку та обробки даних
+ у Києві. Для бізнесу це додає до ризику втрати складу ризик зупинки самої системи
+ керування ним.</div>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 4</div>
+<div class="xtitle">Уражені об'єкти телекому і дата-центрів</div>
+<div class="xsub">Київ, 24–27 вересня 2026 року</div>
+<table class="zebra compact">
+<thead><tr><th style="width:15mm">Дата</th><th style="width:44mm">Об'єкт</th>
+<th>Наслідки</th><th class="d">Дост.</th></tr></thead>
+<tbody>
+<tr><td><strong>24.09</strong></td>
+<td>MiroHost, «Павутина»/UTELS,<br/>«Домонет», Kievnet, Faust</td>
+<td>Пошкоджено інфраструктуру провайдерів; уражено дата-центр КВЦ «Парковий»,
+ комплекс призупинив роботу</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>25.09</strong></td>
+<td><strong>Cosmonova</strong> і <strong>«Датагруп»</strong></td>
+<td>Cosmonova: дані клієнтів вдалося зберегти. «Датагруп»: сервіси продовжили роботу
+ з резервних майданчиків — спрацювало резервування</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>26.09</strong></td><td>Cosmonova <span style="color:var(--gray3)">повторно</span>,
+ «Коло.ТБ» <span style="color:var(--gray3)">втретє</span></td>
+<td>Пошкоджено опорну мережу COSMONOVA|NET, перебої в інтернеті у частини клієнтів.
+ У «Коло.ТБ» — найскладніша ситуація з трьох ударів</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr><td><strong>26.09</strong></td><td>Дата-центр партнера MEGOGO</td>
+<td>Пошкоджено майданчик, що постачає телевізійний сигнал; призупинено мовлення
+ «Новини LIVE», «Армія TV» та «Ми-Україна+»</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+<tr class="total"><td><strong>27.09</strong></td>
+<td><strong>Головний офіс «Київстар»</strong><br/>
+<span style="color:var(--gray3)">вул. Дегтярівська</span></td>
+<td>Будівля пошкоджена, без постраждалих. Раніше цього місяця: 11.09 — офіс інженерної
+ команди на тій самій локації, 17.09 — будівля з обладнанням на Київщині</td>
+<td class="d"><span class="m z">[З]</span></td></tr>
+</tbody></table>
+<div class="xsrc">Джерело: заяви компаній</div>
+</div>
+<div class="callout amber">
+<div class="t">Оцінка мети ударів і реакція держави</div>
+ За заявою МЗС, удари по дата-центрах спрямовані на те, щоб <strong>перервати роботу
+ системи сповіщення про повітряні тривоги</strong> <span class="m z">[З]</span>:
+ під ціллю опинився і канал попередження населення.
+ <div style="margin-top:1.5mm">25 вересня на Ставці ухвалено окремі рішення щодо захисту
+ дата-центрів. Прем’єр-міністр заявив, що в цьому питанні <strong>слід виходити
+ з найгіршого сценарію</strong>: частину потужностей переводити в «хмару» і за кордон,
+ частину тримати в змішаному режимі <span class="m z">[З]</span>.</div>
+<div style="margin-top:1.5mm">Для складської логістики це означає: сучасний склад
+ зупиняється й тоді, коли недоступні WMS, ERP чи канал зв'язку з перевізником.
+ Кейс «Датагруп» показав робочу відповідь — <strong>сервіси продовжили роботу
+ з резервних майданчиків</strong>, бо резервування було закладене заздалегідь.</div>
+</div>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 5</div>
+<div class="xtitle">Перевірка ІТ-стійкості складського майданчика</div>
+<div class="xsub">Мінімальний набір питань до власної служби та до дистриб'ютора</div>
+<table class="zebra compact">
+<thead><tr><th style="width:44mm">Що перевірити</th><th>Ознака достатності</th></tr></thead>
+<tbody>
+<tr><td><strong>Розміщення серверів</strong></td>
+<td>Відомо, у якому дата-центрі фізично працюють WMS і ERP, та чи входить цей
+ майданчик до переліку вже уражених</td></tr>
+<tr><td><strong>Резервний майданчик</strong></td>
+<td>Копія системи розгорнута <strong>в іншому регіоні</strong>; перемикання
+ протестовано за останні 3 місяці</td></tr>
+<tr><td><strong>Резервний канал зв'язку</strong></td>
+<td>Другий провайдер із незалежною трасою; переключення відпрацьоване</td></tr>
+<tr><td><strong>Робота без зв'язку</strong></td>
+<td>Склад здатен приймати й відвантажувати товар <strong>щонайменше добу</strong>
+ в офлайн-режимі з подальшою синхронізацією</td></tr>
+<tr class="total"><td><strong>Копії та зв'язок із перевізником</strong></td>
+<td>Резервні копії зберігаються поза основним майданчиком, відновлення перевірено
+ практично; є узгоджений запасний спосіб передавання заявок і накладних</td></tr>
+</tbody></table>
+<div class="xsrc">Складено на основі кейсів тижня: «Датагруп» (успішне перемикання
+ на резервні майданчики), Cosmonova та «Коло.ТБ» (повторні ураження опорної мережі)
+ <span class="m r">[Р]</span></div>
+</div>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 7 · ФРОНТ -->
+
+<!-- 8 · ПОВІТРЯНІ УДАРИ: ОБСЯГИ -->
+<div class="page">
+<div class="hdr"><span>Головне · Повітряні удари</span><span>21–27 вересня 2026</span></div>
+<h2>Повітряні удари · обсяги застосування</h2>
+<p>Застосування керованих авіабомб трималося в коридорі <strong>277–309 одиниць за добу</strong>
+ — нижче, ніж тижнем раніше. Добова кількість дронів-камікадзе зросла
+ до <strong>10,5 тис.</strong> у пік 26 вересня; за тиждень застосовано
+ <strong>63,4 тис.</strong> дронів <span class="m p">[П]</span>.</p>
+<div class="callout">
+<div class="t">Два різних обліки — як читати цифри</div>
+<table class="compact">
+<tbody>
+<tr><td style="width:38mm"><strong>63,4 тис. дронів</strong></td>
+<td>Сумарне застосування дронів-камікадзе на всій лінії зіткнення за добовими
+ зведеннями Генштабу — переважно FPV по військових цілях у прифронтовій смузі
+ <span class="m p">[П]</span></td></tr>
+<tr><td><strong>2 200 ударних БпЛА</strong></td>
+<td>Далекобійні апарати типу «Шахед», у тому числі реактивні, застосовані
+ по тилових містах і об'єктах — саме ця цифра стосується бізнесу
+ <span class="m z">[З]</span></td></tr>
+<tr class="total"><td><strong>2 040 і 1 650 КАБ</strong></td>
+<td>2 040 — сума добових зведень Генштабу за 7 діб <span class="m r">[Р]</span>;
+ 1 650 — офіційна тижнева заява <span class="m z">[З]</span>. Розбіжність
+ пояснюється різним обліком; для оцінки динаміки використовуємо один ряд —
+ добові зведення</td></tr>
+</tbody></table>
+</div>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 7</div>
+<div class="xtitle">Добові показники за зведеннями Генерального штабу</div>
+<div class="xsub">За зведеннями на ранок наступної доби</div>
+<table class="zebra compact">
+<thead><tr><th style="width:14mm">Доба</th>
+<th class="num" style="width:15mm">Авіа-<br/>удари</th><th class="num" style="width:13mm">КАБ</th>
+<th class="num" style="width:17mm">Дрони-<br/>камікадзе</th>
+<th class="num" style="width:19mm">Обстріли<br/>(з них РСЗВ)</th>
+<th class="num" style="width:16mm">Боє-<br/>зіткнення</th>
+<th class="d">Дост.</th></tr></thead>
+<tbody>
+<tr><td><strong>21.09</strong></td><td class="num">87</td><td class="num">305</td>
+<td class="num">9 647</td><td class="num">2 795</td><td class="num">248</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>22.09</strong></td><td class="num">87</td><td class="num"><strong>309</strong></td>
+<td class="num">9 377</td><td class="num">2 693 (34)</td><td class="num">247</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>23.09</strong></td><td class="num">83</td><td class="num">287</td>
+<td class="num">7 467</td><td class="num">2 469 (93)</td><td class="num"><strong>277</strong></td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>24.09</strong></td><td class="num">80 + 1 ракетний</td><td class="num">296</td>
+<td class="num">8 359</td><td class="num">2 648</td><td class="num">236</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>25.09</strong></td><td class="num">79</td><td class="num">277</td>
+<td class="num">9 223</td><td class="num">2 636 (44)</td><td class="num">205</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>26.09</strong></td><td class="num">90</td><td class="num">289</td>
+<td class="num"><strong>10 489</strong></td><td class="num">2 729 (26)</td><td class="num">221</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>27.09</strong></td><td class="num">90</td><td class="num">277</td>
+<td class="num">8 845</td><td class="num"><strong>2 918</strong></td><td class="num">229</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr class="total"><td><strong>Разом за тиждень</strong></td>
+<td class="num">597</td><td class="num"><strong>2 040</strong></td>
+<td class="num">63,4 тис.</td><td class="num">18,9 тис.</td>
+<td class="num">1 663</td><td class="d"><span class="m r">[Р]</span></td></tr>
+<tr><td><strong>Діапазон за добу</strong></td>
+<td class="num">79–90</td><td class="num">277–309</td>
+<td class="num">7,5–<br/>10,5 тис.</td><td class="num">2,5–<br/>2,9 тис.</td>
+<td class="num">205–277</td><td class="d"></td></tr>
+</tbody></table>
+<div class="xsrc">Тиждень наведено повністю, включно з добою 27 вересня.
+ Джерело: щоденні оперативні зведення Генерального штабу ЗСУ</div>
+</div>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 8</div>
+<div class="xtitle">Динаміка застосування КАБ по добах</div>
+<div class="xsub">Керовані авіабомби, одиниць за добу</div>
+<table class="bars">
+<tr><td class="lbl">21 вересня · Пн</td>
+<td class="track"><span class="bar" style="width:99%"></span></td><td class="v">305</td></tr>
+<tr><td class="lbl">22 вересня · Вт</td>
+<td class="track"><span class="bar red" style="width:100%"></span></td><td class="v">309</td></tr>
+<tr><td class="lbl">23 вересня · Ср</td>
+<td class="track"><span class="bar" style="width:93%"></span></td><td class="v">287</td></tr>
+<tr><td class="lbl">24 вересня · Чт</td>
+<td class="track"><span class="bar" style="width:96%"></span></td><td class="v">296</td></tr>
+<tr><td class="lbl">25 вересня · Пт</td>
+<td class="track"><span class="bar green" style="width:90%"></span></td><td class="v">277</td></tr>
+<tr><td class="lbl">26 вересня · Сб</td>
+<td class="track"><span class="bar" style="width:94%"></span></td><td class="v">289</td></tr>
+<tr><td class="lbl">27 вересня · Нд</td>
+<td class="track"><span class="bar green" style="width:90%"></span></td><td class="v">277</td></tr>
+</table>
+<div class="xsrc">Коридор тижня — 277–309 проти 280–356 у попередньому випуску;
+ сумарно <strong>2 040</strong> КАБ. Джерело: Генеральний штаб ЗСУ</div>
+</div>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 9 · ХРОНОЛОГІЯ -->
+<div class="page">
+<div class="hdr"><span>Головне · Повітряні удари</span><span>21–27 вересня 2026</span></div>
+<h2>Хронологія ключових ударів</h2>
+<table class="compact zebra">
+<thead><tr><th style="width:15mm">Дата</th><th>Подія та наслідки</th>
+<th class="d">Дост.</th></tr></thead>
+<tbody>
+<tr><td><strong>21.09</strong></td>
+<td><strong>Кривий Ріг.</strong> Четвертий за 5 тижнів ракетний удар по комбінату
+ ArcelorMittal. Сукупно за серію — 5 загиблих і 17 травмованих працівників,
+ 1 у критичному стані.</td><td class="d"><span class="m z">[З]</span></td></tr>
+<tr style="background:#FDF3F4"><td><strong>22.09</strong></td>
+<td><strong>Масована комбінована атака.</strong> Противник застосував протикорабельні
+ «Онікс», балістику (Іскандер-М/С-400/KN-23), <strong>4 «Калібри»</strong>,
+ 8 «Бандероль»/«Дань-Т» та <strong>212 ударних БпЛА</strong>, з них 82 реактивні.
+ Знешкоджено <strong>186 цілей</strong>; влучання на <strong>22 локаціях</strong>,
+ падіння уламків ще на 4. Головні напрямки — Дніпропетровщина, Кіровоградщина,
+ Полтавщина.</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>22.09</strong></td>
+<td><strong>Дніпро:</strong> балістичний удар по цивільному підприємству «Інтерпайп» —
+ <strong>4 загиблі співробітники, 7 поранених</strong>, виробництво
+ зупинено. <strong>Запоріжжя:</strong> удар по торговельному центру, 2 поранених;
+ у Кушугумі загинув мирний житель. <strong>Ізюм:</strong> частково знеструмлений
+ після масованого авіаудару, 7 постраждалих.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>22.09</strong></td>
+<td><strong>Одещина:</strong> удари реактивними БпЛА по терміналу
+ <strong>«Нової пошти»</strong> та інших складських приміщеннях,
+ масштабні пожежі; 1 людина загинула, 2 госпіталізовані.
+ <strong>Київ:</strong> влучання в резервуари з пальним в Оболонському районі.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>23.09</strong></td>
+<td><strong>Ранкова атака на Київ.</strong> БпЛА уражено <strong>2 АЗС</strong>
+ у Голосіївському та Дарницькому районах, будівлю бізнес-центру, магазин;
+ у Солом'янському районі загорілося транспортне підприємство поблизу залізничного
+ вокзалу. <strong>2 загиблих, 45 постраждалих</strong> — серед загиблих
+ 42-річний чоловік, травмований на АЗС.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>24.09</strong></td>
+<td><strong>Балістика по Києву.</strong> Пошкоджено <strong>пологовий будинок</strong>
+ і клініко-діагностичний центр у Подільському районі; пацієнтки, діти й медики
+ були в укритті. 2 загиблих, щонайменше 8 постраждалих.
+ Уражено дата-центри та провайдерів столиці, зруйновано <strong>головне виробництво
+ і логістичний склад «ТК-Домашній текстиль»</strong> та ювелірне підприємство
+ Dukachi.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>24.09</strong></td>
+<td><strong>Польща евакуювала 2 пункти пропуску</strong> — у Грубешові та Дорогуську —
+ через атаку у Волинській області; закриття тривало близько пів години.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr class="total"><td><strong>25.09</strong></td>
+<td><strong>Найважча доба тижня для Києва.</strong> Кілька хвиль ударів БпЛА і ракетною
+ зброєю. <strong>7 загиблих, 59 постраждалих</strong>, серед загиблих —
+ 14-річний підліток. Уражено житлові будинки, офісні будівлі, супермаркет,
+ бізнес-центри, склад McDonald's, дата-центри Cosmonova і «Датагруп», будівлю
+ Вищої ради правосуддя. Пожежа знищила <strong>склад мережі «Сушия»</strong>
+ з усіма товарними запасами. ППО знешкодила <strong>267 із 295</strong> дронів,
+ влучання на 16 локаціях.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>26.09</strong></td>
+<td><strong>Суми:</strong> удари КАБ — <strong>2 загиблих, 23 постраждалі</strong>,
+ серед них 4 дітей і немовля. <strong>Запоріжжя:</strong> 2 загиблих,
+ уражено ринок. <strong>Київ:</strong> пошкоджено Auchan Біличі
+ та складську будівлю в Оболонському районі.
+ ППО збила <strong>134 із 173</strong> цілей, влучання на 19 локаціях.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr class="total"><td><strong>27.09</strong></td>
+<td><strong>Київ і область:</strong> <strong>повністю знищено склад Kärcher Ukraine</strong>
+ з усією продукцією; уражено ринок <strong>«Столичний»</strong> у Софіївській Борщагівці
+ (2 загиблих, близько 10 поранених), головний офіс «Київстар», склад
+ Zammler Group, склад і офіс у Броварах. ППО знешкодила <strong>147 зі 170</strong>
+ дронів, понад 70 реактивні.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>27.09</strong></td>
+<td><strong>Одещина — удар по портовій і складській інфраструктурі.</strong>
+ В Ізмаїльському районі уражено <strong>порт Кілії</strong>. В Одеському районі
+ знищено <strong>склад «Нової пошти»</strong> із сусіднім цехом —
+ <strong>вдруге за тиждень</strong> після 22.09; горіли складські приміщення,
+ пошкоджено <strong>зерновий склад</strong>, магазин і готель;
+ 1 людина загинула, 2 поранені.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>27.09</strong></td>
+<td><strong>Дніпропетровщина:</strong> майже 20 атак — пошкоджено підприємства
+ <strong>у Дніпрі та Кривому Розі</strong>. <strong>Суми:</strong> 3 удари КАБ, 2 загиблих.</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+</tbody></table>
+<h3>Тактичні особливості тижня</h3>
+<ul class="clean tight">
+<li><strong>Реактивні БпЛА — вже понад третина хвилі:</strong> 22 вересня 82 зі 212 ударних
+ дронів були реактивними, що скорочує час підльоту і ускладнює перехоплення.</li>
+<li><strong>Повернення протикорабельних «Оніксів»</strong> у сухопутних ударах, поряд
+ з «Калібрами» та балістикою — класична схема перевантаження ППО.</li>
+<li><strong>Удари серіями по одному об'єкту</strong> з інтервалом у 2–3 доби:
+ добивання відновлених потужностей замість пошуку нових цілей.</li>
+<li><strong>Зміщення від енергетики й житла до комерційної інфраструктури</strong>
+ у тилових регіонах — склади, виробництва, вузли зв'язку.</li>
+<li><strong>Скорочення застосування балістики з серпня.</strong> За оцінкою Bloomberg,
+ противник заощаджує частину ракетного арсеналу, накопичуючи його для ударів
+ по енергетиці та теплопостачанню в холодний сезон <span class="m o">[О]</span>.</li>
+</ul>
+<h3>Прогноз на наступний тиждень</h3>
+<table class="compact">
+<thead><tr><th style="width:24mm">Ймовірність</th><th>Сценарій</th></tr></thead>
+<tbody>
+<tr><td><strong style="color:var(--red)">Висока</strong></td>
+<td>Продовження ударів по складах і дистрибуційних центрах столичного регіону:
+ закономірність підтверджена третій тиждень поспіль.</td></tr>
+<tr><td><strong style="color:var(--red)">Висока</strong></td>
+<td>Нарощування ударів по енергетиці з наближенням опалювального сезону —
+ з урахуванням здобутих планів противника на зиму.</td></tr>
+<tr><td><strong style="color:var(--amber)">Середня</strong></td>
+<td>Повторні удари по вже уражених телеком-вузлах і дата-центрах Києва.</td></tr>
+<tr><td><strong style="color:var(--amber)">Середня</strong></td>
+<td>Подальше зростання частки реактивних БпЛА та збереження добових обсягів
+ дронів на рівні понад 10 тис.</td></tr>
+</tbody></table>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 10 · ЕНЕРГЕТИКА -->
+
+<!-- 11 · ТРАНСПОРТ -->
+
+<!-- 12 · РІВЕНЬ ЗАГРОЗ -->
+<div class="page">
+<div class="hdr"><span>Головне · Рівень загроз</span><span>21–27 вересня 2026</span></div>
+<h2>Рівень загроз</h2>
+<div class="exhibit">
+<div class="xnum">Ілюстрація 11</div>
+<div class="xtitle">Індекс загрози по регіонах</div>
+<div class="xsub">Шкала 1–5, де 5 — критичний рівень; Δ — зміна відносно попереднього тижня</div>
+<table class="zebra compact">
+<thead><tr><th style="width:40mm">Регіон</th><th class="c" style="width:21mm">Індекс</th>
+<th class="c" style="width:9mm">Δ</th><th>Головний драйвер тижня</th></tr></thead>
+<tbody>
+<tr style="background:#FDF3F4"><td><strong>Київ і область</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-eq">=</span></td>
+<td><strong>40 із 69 уражених бізнес-об'єктів тижня.</strong> П'ять ночей атак поспіль;
+ 25.09 — 7 загиблих і 59 постраждалих</td></tr>
+<tr><td><strong>Донецька</strong> <span style="color:var(--gray3)">(прифронт)</span></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-eq">=</span></td>
+<td>Покровський і Костянтинівський напрямки — найінтенсивніші бої;
+ успіх Сил оборони на Лиманському</td></tr>
+<tr style="background:#FDF3F4"><td><strong>Дніпропетровська</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-up">▲</span></td>
+<td><strong>Зупинка ArcelorMittal у Кривому Розі</strong> після удару 21.09;
+ загибель 4 працівників «Інтерпайпу» в Дніпрі 22.09</td></tr>
+<tr><td><strong>Сумська</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-up">▲</span></td>
+<td>Систематичні удари КАБ по обласному центру: 26.09 — 2 загиблих
+ і 23 постраждалі, за добу по області — 3 загиблих і 30 поранених</td></tr>
+<tr><td><strong>Запорізька</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-eq">=</span></td>
+<td>Удари по торговельному центру і ринку; 26.09 — 2 загиблих,
+ 27.09 — загиблий у Комишувасі</td></tr>
+<tr style="background:#FDF3F4"><td><strong>Одеська</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●●</span></span></td>
+<td class="c"><span class="d-up">▲</span></td>
+<td><strong>Удар по порту Кілії та складах Одеського району 27.09</strong>;
+ склади й пожежі 22.09, поштова логістика, вантажівки на трасі</td></tr>
+<tr><td><strong>Харківська</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●</span><span class="off">●</span></span></td>
+<td class="c"><span class="d-eq">=</span></td>
+<td>Масований авіаудар по Ізюму зі знеструмленням; щодобові удари по Харкову</td></tr>
+<tr><td><strong>Житомирська</strong></td>
+<td class="c"><span class="dots"><span class="on">●●●●</span><span class="off">●</span></span></td>
+<td class="c"><span class="d-up">▲</span></td>
+<td><strong>Двічі за тиждень уражено підприємство з іноземними інвестиціями</strong>
+ (Кромберг енд Шуберт)</td></tr>
+<tr><td><strong>Полтавська, Вінницька,<br/>Кіровоградська</strong></td>
+<td class="c"><span class="dots"><span class="on a">●●●</span><span class="off">●●</span></span></td>
+<td class="c"><span class="d-up">▲</span></td>
+<td>Напрямки масованої атаки 22.09; енергооб'єкти та ЛЕП</td></tr>
+<tr><td><strong>Захід</strong> <span style="color:var(--gray3)">(тил)</span></td>
+<td class="c"><span class="dots"><span class="on g">●●</span><span class="off">●●●</span></span></td>
+<td class="c"><span class="d-eq">=</span></td>
+<td>Епізодичні загрози; основний фактор — зупинки пунктів пропуску
+ на час повітряних тривог</td></tr>
+</tbody></table>
+<div class="xsrc">Індекс — аналітична оцінка цього огляду <span class="m r">[Р]</span>:
+ враховує щільність ударів, наявність наземного тиску та вплив на комерційну
+ інфраструктуру. Джерело вихідних даних:</div>
+</div>
+<div class="callout">
+<div class="t">Що змінилося в профілі загрози</div>
+ Три тижні поспіль основною мішенню в тилових регіонах залишаються комерційні об'єкти.
+ Цього тижня до складів і виробництв додалися <strong>вузли зв'язку й обробки даних</strong>
+ та <strong>персонал на робочих місцях</strong>. Оцінка «тиловий регіон — низький ризик»
+ більше не застосовна ні до об'єктів зберігання, ні до виробничих майданчиків,
+ ні до виїзних робіт.
+ </div>
+<div class="callout red">
+<div class="t">Оцінка характеру кампанії <span class="m r">[Р]</span></div>
+<strong>Удари по бізнесу мають ознаки системної кампанії, а не набору окремих епізодів.</strong>
+ Вибір цілей не пояснюється ні структурою власності, ні галуззю: за тиждень уражено
+ підприємства з українським, німецьким, шведським і американським капіталом — від металургії
+ та фармацевтики до текстилю, громадського харчування і поштової логістики. Спільна ознака
+ в них одна — належність до економіки. Це дає підстави оцінювати мету як завдання
+ <strong>максимальної сукупної шкоди економіці</strong>, а не ураження окремих виробництв.
+ <div style="margin-top:1.5mm">Звідси практичний наслідок: галузі, які досі не зазнали
+ ударів, не мають ані додаткового захисту, ані підстав вважати себе поза переліком цілей.
+ <strong>Відсутність уражень у секторі варто читати як питання черговості, а не
+ убезпеченості.</strong></div>
+</div>
+<div class="callout amber">
+<div class="t">Перспектива протидії повітряним загрозам <span class="m r">[Р]</span></div>
+ Ефективних засобів протидії балістиці та реактивним БпЛА нового покоління
+ в достатній кількості наразі немає. Наша оцінка горизонту:
+ <table class="compact" style="margin-top:1.5mm">
+<tbody>
+<tr><td style="width:40mm"><strong>Балістичні ракети</strong></td>
+<td>Радикальних змін найближчим часом не очікуємо. Малий час підльоту зберігає
+ ймовірність влучання до оголошення тривоги</td></tr>
+<tr><td><strong>Реактивні БпЛА</strong></td>
+<td>Протягом найближчих тижнів очікуємо відносного полегшення — зростання відсотка
+ перехоплень. Водночас частина апаратів прориватиметься постійно</td></tr>
+<tr class="total"><td><strong>Режим тривог</strong></td>
+<td>У найближчі місяці тривоги <strong>жовтого рівня</strong> в більшості центральних
+ регіонів будуть <strong>стандартним явищем, а не винятком</strong></td></tr>
+</tbody></table>
+<div style="margin-top:1.5mm">Для планування це означає, що графік змін, виїзних робіт
+ і приймання вантажів доцільно будувати з припущення про регулярні зупинки, а не
+ розглядати їх як позаштатну ситуацію.</div>
+</div>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 13 · РЕКОМЕНДАЦІЇ -->
+
+<!-- 14 · МІЖНАРОДНІ ПОДІЇ -->
+<div class="page">
+<div class="hdr"><span>Міжнародні події</span><span>21–27 вересня 2026</span></div>
+<div class="kicker">Зовнішній контекст</div>
+<h2>Міжнародні події</h2>
+<div class="deck">Тиждень Генасамблеї ООН у Нью-Йорку, саміт Трампа і Сі та загострення
+ навколо Ормузької протоки. Жоден із трьох вузлів не дав ознак урегулювання.</div>
+<div class="callout blue">
+<div class="t">Порядок денний тижня ООН</div>
+<table class="compact" style="margin-top:1.5mm">
+<tbody>
+<tr><td style="width:42mm"><strong>«Енергетичне перемир'я»</strong></td>
+<td>Україна заявила про готовність до будь-якого формату взаємного припинення ударів
+ по енергетиці та експорту <span class="m z">[З]</span>. Держсекретар США
+ допускає обмежене перемир'я, пов'язане з експортом зерна та енергоносіїв</td></tr>
+<tr><td><strong>Зимовий пакет</strong></td>
+<td>Україна попросила США зимовий пакет підтримки; запит узято на розгляд</td></tr>
+<tr><td><strong>Санкції ЄС</strong></td>
+<td>Виключення двох російських бізнесменів із санкційних списків ЄС викликало критику
+ Києва та заклик до національних санкцій з боку окремих країн</td></tr>
+<tr class="total"><td><strong>Фінансування</strong></td>
+<td>ЄС ухвалив позитивне рішення щодо <strong>EUR3 млрд</strong> за програмою
+ Ukraine Facility і узгодив умови виділення <strong>EUR6,6 млрд</strong>
+ з Європейського фонду миру; Світовий банк — $0,84 млрд під гарантію Канади</td></tr>
+</tbody></table>
+</div>
+<h3>Інші події тижня</h3>
+<ul class="clean tight">
+<li><strong>Перша з 2022 року зустріч глав МЗС Німеччини та Росії</strong> в Нью-Йорку;
+ Берлін закликав Москву відмовитися від ескалації <span class="m p">[П]</span>.</li>
+<li><strong>Удари по території РФ.</strong> За тиждень уражено 6 стратегічних НПЗ;
+ Пермський НПЗ зупинив роботу після атаки БпЛА; уражено Ільський НПЗ у Краснодарському
+ краї та Азовський оптико-механічний завод <span class="m z">[З]</span>.</li>
+<li><strong>Санкції.</strong> Президент України ввів санкції проти 44 осіб, причетних
+ до проведення незаконних «виборів» на ТОТ. Анонсовано нові пакети —
+ <strong>проти фінансових ланцюгів і виробників російської балістики</strong>, які мають
+ запрацювати <strong>вже у жовтні</strong> <span class="m z">[З]</span>.</li>
+<li><strong>Польща.</strong> Триває дезінформаційна кампанія з дискредитації українців;
+ підозрюваного у нападі на монастир у Ярославі заарештовано на 3 місяці.</li>
+</ul>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 15 · ГЛОБАЛЬНІ ВУЗЛИ НАПРУГИ -->
+
+<!-- 15 · ЕКОНОМІКА -->
+
+<!-- 16 · ПРЯМІ ФІНАНСОВІ НАСЛІДКИ -->
+
+<!-- 16 · ДОДАТОК 1 -->
+<div class="page">
+<div class="hdr"><span>Додаток 1</span><span>21–27 вересня 2026</span></div>
+<div class="kicker">Додаток 1</div>
+<h2>Комендантська година по областях України</h2>
+<div class="deck">Зведення станом на 27 вересня 2026 року. Протягом звітного тижня нових
+ розпоряджень обласних військових адміністрацій про зміну режиму не виявлено.</div>
+<div class="callout amber">
+<div class="t">Застереження</div>
+ Режим комендантської години змінюється оперативно рішенням обласної військової адміністрації,
+ а для прифронтових громад може відрізнятися від обласного.
+ <strong>Перед поїздкою обов'язково перевіряти актуальний режим на офіційних каналах
+ відповідної ОВА.</strong>
+</div>
+<table class="zebra compact">
+<thead><tr><th style="width:50mm">Регіон</th><th style="width:24mm">Режим</th>
+<th>Особливості</th><th class="d">Дост.</th></tr></thead>
+<tbody>
+<tr><td><strong>м. Київ</strong></td><td>00:00 – 05:00</td>
+<td>Метрополітен працює цілодобово</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td>Київська область</td><td>00:00 – 05:00</td><td>—</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Сумська область</strong></td><td>00:00 – 05:00</td>
+<td>Стандартний режим після повернення з 15 вересня</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Донецька область</strong></td><td>21:00 – 05:00</td>
+<td>У населених пунктах ближче 10 км до лінії фронту — значно довший режим;
+ для окремих громад діють спеціальні рішення</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td>Луганська область <span style="color:var(--gray3)">(підконтрольна частина)</span></td>
+<td>21:00 – 05:00</td><td>—</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Харківська область</strong></td><td>00:00 – 05:00</td>
+<td>Для окремих прифронтових і прикордонних районів — посилені обмеження</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Запорізька область</strong></td><td>21:00 – 05:00</td>
+<td>м. Запоріжжя та Запорізький район — 23:00–05:00; для прифронтових громад —
+ окремі режими</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Херсонська область</strong></td><td>21:00 – 05:00</td>
+<td>Для прибережних громад можливі додаткові обмеження</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Дніпропетровська область</strong></td><td>00:00 – 05:00</td>
+<td>Нікопольський та Синельниківський райони — раніший початок</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Миколаївська область</strong></td><td>00:00 – 05:00</td>
+<td>Для окремих громад Очаківського напрямку — раніший початок</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td>Одеська область</td><td>00:00 – 05:00</td><td>—</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td>Кіровоградська, Полтавська, Черкаська,<br/>Чернігівська, Чернівецька області</td>
+<td>00:00 – 04:00</td><td>—</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td>Вінницька, Волинська, Житомирська,<br/>Івано-Франківська, Львівська, Рівненська,<br/>Тернопільська, Хмельницька області</td>
+<td>00:00 – 05:00</td><td>—</td><td class="d"><span class="m p">[П]</span></td></tr>
+<tr><td><strong>Закарпатська область</strong></td><td>—</td>
+<td><strong>Комендантська година не встановлена</strong> — єдиний регіон України</td>
+<td class="d"><span class="m p">[П]</span></td></tr>
+</tbody></table>
+<p style="font-size:7.4pt;color:var(--gray2);margin-top:2mm">
+<em>Під час комендантської години громадський транспорт не працює.
+ Джерело: рішення обласних військових адміністрацій</em></p>
+<div class="ftr"><span>Зразок</span><span class="pg"></span></div>
+</div>
+<!-- 17 · ДОДАТОК 2 -->
+
+<!-- 18 · ДОДАТОК 3 · КАРТА -->
+
+
+</body></html>

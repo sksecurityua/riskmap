@@ -1,0 +1,178 @@
+{
+ "updated": "2026-09-28",
+ "status": "без суттєвих змін",
+ "items": [
+  {
+   "code": "Kyiv",
+   "level": "medium",
+   "note": "Висока вірогідність ракетних атак без оголошення повітряної тривоги та падіння уламків збитих ракет у непередбачуваних місцях; мінна небезпека."
+  },
+  {
+   "code": "Dnipropetrovsk Oblast",
+   "level": "high_partial",
+   "note": "Регулярні артилерійські обстріли та ракетні і бомбові удари у придніпровських районах."
+  },
+  {
+   "code": "Donetsk Oblast",
+   "level": "high",
+   "note": "Постійні, інтенсивні артилерійські та ракетні обстріли. Окупована частина території."
+  },
+  {
+   "code": "Zaporizhia Oblast",
+   "level": "high",
+   "note": "Постійні, інтенсивні артилерійські, ракетні та авіаційні (КАБ) обстріли. Окупована частина території."
+  },
+  {
+   "code": "Kyiv Oblast",
+   "level": "medium",
+   "note": "Підвищений рівень мінної загрози на деокупованих територіях та мінімальна вірогідність ракетних ударів без оголошення тривоги."
+  },
+  {
+   "code": "Luhansk Oblast",
+   "level": "high",
+   "note": "Постійні, інтенсивні артилерійські та ракетні обстріли. Окупована частина території."
+  },
+  {
+   "code": "Mykolaiv Oblast",
+   "level": "high_partial",
+   "note": "Постійні, інтенсивні артилерійські та ракетні обстріли прибережних районів. Окупована частина території."
+  },
+  {
+   "code": "Odessa Oblast",
+   "level": "high_partial",
+   "note": "Висока вірогідність ракетних атак (у т.ч. балістичними ракетами з касетною боєчастиною, без оголошення повітряної тривоги, або через 3-7 хвилин після попередження про загрозу) та ударів БпЛА по логістичних центрах, портовій інфраструктурі та випадкових об’єктах."
+  },
+  {
+   "code": "Sumy Oblast",
+   "level": "high_partial",
+   "note": "Регулярні артилерійські обстріли, ракетні та бомбові удари, атаки БпЛА по м. Суми та у прикордонних районах. «Поодинокі» ракетні удари по області."
+  },
+  {
+   "code": "Kharkiv Oblast",
+   "level": "high_partial",
+   "note": "Регулярні ракетні та бомбові удари, атаки БпЛА по Харкову. Регулярні артилерійські обстріли, ракетні та бомбові удари і атаки БпЛА у прикордонних районах. Окупована частина території."
+  },
+  {
+   "code": "Kherson Oblast",
+   "level": "high",
+   "note": "Постійні КАБ, артилерійські та РСЗВ обстріли, атаки БпЛА, мінна небезпека. Окупована частина території."
+  },
+  {
+   "code": "Chernihiv Oblast",
+   "level": "high_partial",
+   "note": "Регулярні артилерійські обстріли, бомбові удари та атаки БпЛА у прикордонних районах. «Поодинокі» ракетні удари по області."
+  }
+ ],
+ "shelters": [
+  {
+   "city": "Київ",
+   "oblast": "Kyiv",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1nv3QreO1QS5_AmRRNLHXu7u99sKJ6JRR&ll=50.43948441581479%2C30.502664219511257&z=10"
+  },
+  {
+   "city": "Львів",
+   "oblast": "Lviv Oblast",
+   "url": "https://map.city-adm.lviv.ua/map/main#map=17//49.84235196776578//24.032238721847534&&layer=9635585433681688-1,100//2765617480184367031-1,100&&action=info-2765617480184367031,2765670914065433670"
+  },
+  {
+   "city": "Дніпро",
+   "oblast": "Dnipropetrovsk Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1VT7MBpAXCVfa3_ToOzlovSpW5RRO3lWZ&ll=48.02719158120762%2C35.245947142606546&z=9"
+  },
+  {
+   "city": "Харків",
+   "oblast": "Kharkiv Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=16g3PB0LSZYAsrrAuiXZuxEBVaN0&ll=50.012967846858885%2C36.304235597352054&z=12"
+  },
+  {
+   "city": "Івано-Франківськ",
+   "oblast": "Ivano-Frankivsk Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?fbclid=IwAR3FGxT4fJgstzugZw1KtmJj2oTmOWXBbiLHaw_OFhXsSxT7iBYtmVqQhDM&mid=1ikN1D3nl3Pqmdzhl2pmimebPSiwopDE&ll=48.78317010332198%2C24.954821050406153&z=10"
+  },
+  {
+   "city": "Запоріжжя",
+   "oblast": "Zaporizhia Oblast",
+   "url": "https://ukryttya.zp.gov.ua/"
+  },
+  {
+   "city": "Тернопіль",
+   "oblast": "Ternopil Oblast",
+   "url": "https://giscid.maps.arcgis.com/apps/webappviewer/index.html?id=07691e5aec27459bb282268818419d46&fbclid=IwAR1x_ZVZeNThMuxmnbIOykJdpkxs2Pjuv5Vaz2IclluHusgDh_Bfj4GUxD0"
+  },
+  {
+   "city": "Одеса",
+   "oblast": "Odessa Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1f7Nswyb-hXG0wkFDhyGYFbrANok&hl=ru&fbclid=IwAR3WQENPPGYdz60vu2FC6JHx0JhEI9DRrH_eVYGv8K_rhnIKFAHdBRUHWp4&ll=46.44156036312168%2C30.78837973894083&z=12"
+  },
+  {
+   "city": "Вінниця",
+   "oblast": "Vinnytsia Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1ODeqZzyrD--SR_Kk2QikzzbaplYFIKsq&ll=49.42114558245183%2C28.76692695937498&z=8"
+  },
+  {
+   "city": "Луцьк",
+   "oblast": "Volyn Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1LI3929tnePZ2kiOQPd_Z-HnVm-4&ll=50.746710860495675%2C25.354731257132677&z=14"
+  },
+  {
+   "city": "Хмельницький",
+   "oblast": "Khmelnytskyi Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=15NSLcOIYzWeSf46DD_Sd8iJJcKM&ll=49.422773625988505%2C26.964993879327505&z=12"
+  },
+  {
+   "city": "Черкаси",
+   "oblast": "Cherkasy Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1pVsKVOq2Uq3Z_UlcjZxffA7mejMyeac&ll=49.425160130435565%2C32.082157806832186&z=14"
+  },
+  {
+   "city": "Рівне",
+   "oblast": "Rivne Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=137hE80p26hMRz3AVkSR9RJRrt77Jbvo&ll=50.61722726201212%2C26.267403704079783&z=12"
+  },
+  {
+   "city": "Миколаїв",
+   "oblast": "Mykolaiv Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1DD_gnR2xEeidXqh0UF4tmPvVzlX1OdzQ&hl=ru&ll=46.91302532863749%2C32.01753667907386&z=10"
+  },
+  {
+   "city": "Житомир",
+   "oblast": "Zhytomyr Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1LrlMgVSGzLfilD0UyZe7e5eplztrzIWG&ll=50.578468612796%2C28.979899787187037&z=8&fbclid=IwAR1tOUvVYSXe_rN6kkRLVbtiv-Js2Ift3TVbiEdB0Qkr2JDyv4Q3gm6HucA"
+  },
+  {
+   "city": "Полтава",
+   "oblast": "Poltava Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=10wBVAAKCTHdPXYODiUbhjTTrJoY&ll=49.59903919946451%2C34.58532104682628&z=12"
+  },
+  {
+   "city": "Чернівці",
+   "oblast": "Chernivtsi Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1oYvZrZg3VwPbRWtabOPfaMyI6Bk&ll=48.27384696491484%2C25.960696221191384&z=11"
+  },
+  {
+   "city": "Чернігів",
+   "oblast": "Chernihiv Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?hl=ru&mid=1VJ4yH6VbKhqRP6Z1W3DB7vKhpXM&ll=51.52010647927098%2C31.276094464404316&z=13"
+  },
+  {
+   "city": "Кропівницький",
+   "oblast": "Kirovohrad Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1Qyxbt-UOgTpGFBuyiCsOrTe3ounflaE_&fbclid=IwAR3urY_8ThpGFCIk0cxgQOxswR_6LIH7f-mhnoV90JzjOIC7NCn5PQUXF4Y&ll=48.51878339811533%2C32.254121328076174&z=13"
+  },
+  {
+   "city": "Суми",
+   "oblast": "Sumy Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1U6JH6sTiCW37oU3nITeUTx5C5-k&ll=50.903152026083944%2C34.835015939073735&z=13"
+  },
+  {
+   "city": "Ужгород",
+   "oblast": "Zakarpattia Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=14VU7WtHmDj3DF2nPVbMBuDM7meXg3Vo6&ll=48.63665942610562%2C22.336026954043202&z=12"
+  },
+  {
+   "city": "Херсон",
+   "oblast": "Kherson Oblast",
+   "url": "https://www.google.com/maps/d/u/0/viewer?mid=1UvMNOVrvfUsrbXMOocTsq__NToM&ll=46.68539207831182%2C32.63015307594078&z=11"
+  }
+ ]
+}

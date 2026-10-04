@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Доступи — Карта ризиків SK Security</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="app.css">
+<style>
+  body { background:var(--bg); }
+  .wrap { max-width:1100px; margin:0 auto; padding:16px; }
+  .top { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px; }
+  .box { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; }
+  table.list { width:100%; border-collapse:collapse; font-size:13px; }
+  table.list th, table.list td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.list th { color:var(--navy); font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  .st-ok { color:var(--green); } .st-bl { color:var(--red); font-weight:600; }
+  .once { background:#fff8e1; border:1px solid #ffe082; border-radius:8px; padding:10px; margin-top:10px; font-size:13px; }
+  .once code { font-size:15px; background:#fff; padding:2px 6px; border-radius:4px; }
+  .actions button { margin:2px 2px 2px 0; }
+  @media (max-width: 800px) { .grid { grid-template-columns:1fr; } table.list { font-size:12px; } }
+</style>
+<script src="config.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>Доступи до кабінетів</h1><div class="sub" id="who">SK Security · лише для аналітиків</div></div>
+    <div><a href="map.html">← До карти</a></div>
+  </div>
+  <div id="demoNote" class="demo" hidden><b>Демо-режим.</b> Облікові записи вигадані й зберігаються лише у вашому браузері. У робочому режимі паролі зберігаються в базі тільки в захешованому вигляді й ніде не показуються — новий пароль видно один раз під час створення або скидання.</div>
+  <div id="denied" class="box" hidden>Сторінка доступна лише аналітикам SK Security. <a href="map.html">Увійти</a></div>
+
+  <div id="main" hidden>
+    <div class="box">
+      <div class="top"><h2 style="margin:0">Користувачі</h2><input type="text" id="filter" placeholder="Пошук: пошта, ім'я, клієнт" style="max-width:280px"></div>
+      <table class="list"><thead><tr><th>Логін (пошта)</th><th>Ім'я</th><th>Клієнт</th><th>Роль</th><th>Останній вхід</th><th>Статус</th><th>Дії</th></tr></thead><tbody id="users"></tbody></table>
+      <div id="onceBox"></div>
+    </div>
+
+    <div class="box" style="margin-top:14px">
+      <h2 style="margin-top:0">Заявки на демо з лендингу</h2>
+      <div class="hint">Копії заявок приходять також на пошту через сервіс форм. Статус оновлюйте тут, щоб колеги бачили, хто вже опрацював.</div>
+      <table class="list"><thead><tr><th>Дата</th><th>Компанія</th><th>Контакт</th><th>Об'єктів / інтерес</th><th>Коментар</th><th>Статус</th></tr></thead><tbody id="reqs"></tbody></table>
+    </div>
+
+    <div class="box" style="margin-top:14px">
+      <div class="top"><h2 style="margin:0">Рівні ризику для відряджень (редакція SK Security)</h2>
+        <div class="row" style="margin:0"><input type="date" id="dUpd" style="max-width:160px"><input type="text" id="dStatus" placeholder="Статус (напр., без суттєвих змін)" style="max-width:240px"><button id="dSave" style="flex:0 0 auto">Зберегти редакцію</button></div></div>
+      <div class="hint">Ці рівні і примітки потрапляють у «Рекомендації для відряджень» і в довідки клієнтів за маршрутами. Області з рівнем «Низький» у документі не показуються окремим рядком (як у чинній редакції).</div>
+      <table class="list"><thead><tr><th>Область</th><th style="width:230px">Рівень ризику</th><th>Примітки</th></tr></thead><tbody id="duty"></tbody></table>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h2 style="margin-top:0">Новий користувач</h2>
+        <input type="email" id="uEmail" placeholder="Робоча пошта (логін)">
+        <input type="text" id="uName" placeholder="Ім'я та прізвище">
+        <div class="row">
+          <select id="uRole"><option value="client_user">Користувач клієнта</option><option value="client_admin">Адміністратор клієнта</option><option value="analyst">Аналітик SK</option></select>
+          <select id="uOrg"></select>
+        </div>
+        <div class="row"><input type="text" id="uPass" placeholder="Пароль (мінімум 10 символів)"><button class="sec" id="uGen" style="flex:0 0 auto">Згенерувати</button></div>
+        <div class="row"><button id="uCreate">Створити доступ</button></div>
+        <div class="hint">Пароль передайте клієнту захищеним каналом (не тим самим листом, що й логін). Клієнт може змінити його через «Забули пароль?».</div>
+      </div>
+      <div class="box">
+        <h2 style="margin-top:0">Клієнти</h2>
+        <table class="list"><thead><tr><th>Назва</th><th>ЄДРПОУ</th><th>Рівень</th><th>Користувачів</th></tr></thead><tbody id="orgs"></tbody></table>
+        <h2>Новий клієнт</h2>
+        <input type="text" id="oName" placeholder="Назва (напр., ТОВ «Клієнт»)">
+        <div class="row"><input type="text" id="oEdrpou" placeholder="ЄДРПОУ"><select id="oTier"><option value="basic">Базовий</option><option value="standard">Стандарт</option><option value="premium">Преміум</option></select></div>
+        <div class="row"><button id="oCreate">Додати клієнта</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
